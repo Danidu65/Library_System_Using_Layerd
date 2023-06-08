@@ -10,7 +10,6 @@ public class BOFactory {
     private static BOFactory boFactory;
 
     private BOFactory(){
-
     }
 
     public enum BOTypes {

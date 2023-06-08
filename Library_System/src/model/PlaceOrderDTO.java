@@ -3,7 +3,6 @@ package model;
 import java.time.LocalDate;
 import java.util.List;
 
-
 public class PlaceOrderDTO {
     String orderId;
     LocalDate orderDate;

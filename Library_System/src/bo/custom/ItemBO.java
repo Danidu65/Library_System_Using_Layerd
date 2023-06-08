@@ -14,5 +14,4 @@ public interface ItemBO extends SuperBO {
     public boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException;
     public String generateNewId() throws SQLException, ClassNotFoundException;
     public ItemDTO searchItem(String newValue) throws SQLException, ClassNotFoundException;
-
 }
