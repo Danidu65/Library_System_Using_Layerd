@@ -28,7 +28,6 @@ import java.util.regex.Pattern;
 import view.*;
 
 public class MemberFormController implements Initializable {
-
     @FXML
     private AnchorPane root;
 
