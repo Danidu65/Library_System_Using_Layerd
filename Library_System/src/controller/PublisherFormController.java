@@ -68,7 +68,6 @@ public class PublisherFormController implements Initializable {
         txtPublishYear.clear();
         txtPublisherId.clear();
         txtPublisherName.clear();
-
     }
 
     @FXML
@@ -81,7 +80,6 @@ public class PublisherFormController implements Initializable {
         txtPublisherName.setText(publisher.getName());
         cmbPublishedBook.setId(publisher.getPublishedBook());
         txtPublishYear.setText(publisher.getYear());
-
     }
 
     @FXML
@@ -140,7 +138,6 @@ public class PublisherFormController implements Initializable {
         LoadTable();
         setTurnId();
         txtPublisherId.setEditable(false);
-
     }
 
     public void LoadTable() throws SQLException {
