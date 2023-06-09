@@ -14,8 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.LibrarySystem.Model.DonetionModel;
 import lk.ijse.LibrarySystem.Model.ExhibitionModel;
-import lk.ijse.LibrarySystem.dto.Donates;
-import lk.ijse.LibrarySystem.dto.Exibition;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -34,7 +32,7 @@ public class DonetsFormController implements Initializable {
         private JFXTextField txtDonetionID;
 
         @FXML
-        private TableView<Donates> tblDonetion;
+        private TableView<lk.ijse.LibrarySystem.dto.DonatesDTO> tblDonetion;
 
         @FXML
         private TableColumn<?, ?> colDonetion;
@@ -78,7 +76,7 @@ public class DonetsFormController implements Initializable {
         tblDonetion.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("donetionName"));
         tblDonetion.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("ExibitionId"));
 
-        ArrayList<Donates> donates;
+        ArrayList<lk.ijse.LibrarySystem.dto.DonatesDTO> donates;
         try {
             donates = DonetionModel.loadAllDonetions();
         } catch (SQLException e) {
@@ -94,7 +92,7 @@ public class DonetsFormController implements Initializable {
         String donetBy = txtDonetionName.getText();
         String exibitionID = String.valueOf(cmbExibitionID.getValue());
 
-        Donates donetion = new Donates();
+        lk.ijse.LibrarySystem.dto.DonatesDTO donetion = new lk.ijse.LibrarySystem.dto.DonatesDTO();
         donetion.setDonetionId(donetionID);
         donetion.setDonetionName(donetBy);
         donetion.setAmmount(Double.parseDouble(ammount));
@@ -105,7 +103,7 @@ public class DonetsFormController implements Initializable {
     }
 
     public void OnSelectExibitionID(ActionEvent actionEvent) throws SQLException {
-        Exibition exibition  = ExhibitionModel.searchFrom((String) cmbExibitionID.getValue());
+        lk.ijse.LibrarySystem.dto.ExibitionDTO exibition  = ExhibitionModel.searchFrom((String) cmbExibitionID.getValue());
     }
 
     public void loadExibitionIds() throws SQLException {

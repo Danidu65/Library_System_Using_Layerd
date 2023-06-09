@@ -16,8 +16,6 @@ import javafx.scene.text.Text;
 import lk.ijse.LibrarySystem.Model.*;
 import lk.ijse.LibrarySystem.dto.Book;
 import lk.ijse.LibrarySystem.dto.Issue;
-import lk.ijse.LibrarySystem.dto.Member;
-import lk.ijse.LibrarySystem.dto.Suplier;
 import lombok.SneakyThrows;
 
 import javax.mail.MessagingException;
@@ -91,7 +89,7 @@ public class IssueFormController implements Initializable {
 
     @FXML
     void OnSelectMember(ActionEvent event) throws SQLException {
-        Member member = MemberModel.Search((String)cmbSearchMember.getValue());
+        lk.ijse.LibrarySystem.dto.MemberDTO member = MemberModel.Search((String)cmbSearchMember.getValue());
         memberName.setText(member.getName());
         memberEmail.setText(member.getEmail());
     }

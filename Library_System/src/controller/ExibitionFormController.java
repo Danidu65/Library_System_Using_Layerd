@@ -12,7 +12,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.LibrarySystem.Model.AuthorModel;
 import lk.ijse.LibrarySystem.Model.ExhibitionModel;
-import lk.ijse.LibrarySystem.dto.Exibition;
 
 import java.sql.SQLException;
 
@@ -45,7 +44,7 @@ public class ExibitionFormController {
         String ExibitionTime = txtTime.getText();
         String ExibitionDesc = textArea.getText();
 
-        Exibition exibition = new Exibition();
+        lk.ijse.LibrarySystem.dto.ExibitionDTO exibition = new lk.ijse.LibrarySystem.dto.ExibitionDTO();
         exibition.setExibitionId(ExibitionID);
         exibition.setExibitionDate(ExibitionDate);
         exibition.setExibitionTime(ExibitionTime);

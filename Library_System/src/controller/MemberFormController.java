@@ -1,4 +1,4 @@
-package lk.ijse.LibrarySystem.Controller;
+package controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -16,7 +16,6 @@ import javafx.scene.paint.Paint;
 import lk.ijse.LibrarySystem.Model.EmailModel;
 import lk.ijse.LibrarySystem.Model.MemberModel;
 import lk.ijse.LibrarySystem.util.Regx.Regx;
-import lk.ijse.LibrarySystem.dto.Member;
 import lombok.SneakyThrows;
 
 import javax.mail.MessagingException;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import view.*;
 
 public class MemberFormController implements Initializable {
 
@@ -54,22 +54,22 @@ public class MemberFormController implements Initializable {
     private JFXComboBox cmbGender;
 
     @FXML
-    private TableView<Member> table;
+    private TableView<lk.ijse.LibrarySystem.dto.MemberDTO> table;
 
     @FXML
-    private TableColumn<Member, String> tblMemberId;
+    private TableColumn<lk.ijse.LibrarySystem.dto.MemberDTO, String> tblMemberId;
 
     @FXML
-    private TableColumn<Member, String> tblMemberName;
+    private TableColumn<lk.ijse.LibrarySystem.dto.MemberDTO, String> tblMemberName;
 
     @FXML
-    private TableColumn<Member, String> tblMemberAddress;
+    private TableColumn<lk.ijse.LibrarySystem.dto.MemberDTO, String> tblMemberAddress;
 
     @FXML
-    private TableColumn<Member, String> tblMemberContact;
+    private TableColumn<lk.ijse.LibrarySystem.dto.MemberDTO, String> tblMemberContact;
 
     @FXML
-    private TableColumn<Member, String> tblMemberEmail;
+    private TableColumn<lk.ijse.LibrarySystem.dto.MemberDTO, String> tblMemberEmail;
 
     @FXML
     void txtMemberAddress(KeyEvent event) {
@@ -135,7 +135,7 @@ public class MemberFormController implements Initializable {
         String memberEmail = this.txtMemberEmail.getText();
         String memberGender = this.cmbGender.getSelectionModel().getSelectedItem().toString();
 
-        Member member = new Member();
+        lk.ijse.LibrarySystem.dto.MemberDTO member = new lk.ijse.LibrarySystem.dto.MemberDTO();
 
         member.setId(memberIdText);
         member.setName(memberNameText);
@@ -159,7 +159,7 @@ public class MemberFormController implements Initializable {
     void SEARCH(ActionEvent event) throws SQLException {
         String searchId = searchMemberId.getText();
 
-        Member member = MemberModel.Search(searchId);
+        lk.ijse.LibrarySystem.dto.MemberDTO member = MemberModel.Search(searchId);
 
         txtMemberId.setText(member.getId());
         txtMemberName.setText(member.getName());
@@ -178,7 +178,7 @@ public class MemberFormController implements Initializable {
         String Email = this.txtMemberEmail.getText();
         String Gender = (String) this.cmbGender.getValue();
 
-        Member member = new Member();
+        lk.ijse.LibrarySystem.dto.MemberDTO member = new lk.ijse.LibrarySystem.dto.MemberDTO();
 
         member.setId(Id);
         member.setName(Name);
@@ -224,7 +224,7 @@ public class MemberFormController implements Initializable {
     }
 
     public void loadTable() throws SQLException {
-        ArrayList<Member> members = MemberModel.LoadAllMembers();
+        ArrayList<lk.ijse.LibrarySystem.dto.MemberDTO> members = MemberModel.LoadAllMembers();
         this.table.setItems(FXCollections.observableArrayList(members));
     }
 }

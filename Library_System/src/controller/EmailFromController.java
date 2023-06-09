@@ -11,7 +11,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import lk.ijse.LibrarySystem.Model.EmailModel;
 import lk.ijse.LibrarySystem.Model.MemberModel;
-import lk.ijse.LibrarySystem.dto.Member;
 
 import javax.mail.MessagingException;
 
@@ -32,7 +31,7 @@ public class EmailFromController implements Initializable {
     private JFXTextField fromtextfield;
 
     public void OnCmbEmail(ActionEvent actionEvent) throws SQLException {
-        Member member = MemberModel.Search((String) cmbEmail.getValue());
+        lk.ijse.LibrarySystem.dto.MemberDTO member = MemberModel.Search((String) cmbEmail.getValue());
     }
 
     public void OnSend(ActionEvent actionEvent) throws MessagingException {

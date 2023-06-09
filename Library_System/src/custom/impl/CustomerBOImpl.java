@@ -3,8 +3,6 @@ package bo.custom.impl;
 import bo.custom.CustomerBO;
 import dao.DAOFactory;
 import dao.custom.CustomerDAO;
-import dao.custom.impl.CustomerDAOimpl;
-import model.CustomerDTO;
 
 import java.sql.SQLException;
 import java.util.List;

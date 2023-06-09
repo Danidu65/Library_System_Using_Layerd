@@ -1,13 +1,6 @@
 package bo.custom;
 
-import model.CustomerDTO;
-import model.ItemDTO;
-import model.OrderDetailDTO;
-import model.PlaceOrderDTO;
-
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface PurchaseOrderBO extends SuperBO {

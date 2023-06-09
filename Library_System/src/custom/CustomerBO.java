@@ -1,7 +1,5 @@
 package bo.custom;
 
-import model.CustomerDTO;
-
 import java.sql.SQLException;
 import java.util.List;
 
