@@ -1,6 +1,6 @@
 package bo.custom.impl;
 
-import bo.custom.CustomerBO;
+import bo.impl.CustomerBO;
 import dao.DAOFactory;
 import dao.custom.CustomerDAO;
 

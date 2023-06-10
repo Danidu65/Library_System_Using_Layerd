@@ -1,4 +1,6 @@
-package bo.custom;
+package bo.impl;
+
+import bo.custom.SuperBO;
 
 import java.sql.SQLException;
 import java.util.List;
