@@ -1,4 +1,4 @@
-package model;
+package dto;
 
 public class UserDTO {
     private String Name;

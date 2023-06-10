@@ -6,17 +6,10 @@ import dao.custom.CustomerDAO;
 import dao.custom.ItemDAO;
 import dao.custom.OrderDAO;
 import dao.custom.OrderDetailsDAO;
-import dao.custom.impl.CustomerDAOimpl;
-import dao.custom.impl.ItemDAOimpl;
-import dao.custom.impl.OrderDAOimpl;
-import dao.custom.impl.OrderDetailsDAOimpl;
 import db.DBConnection;
-import model.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseOrderBOImpl implements PurchaseOrderBO {
