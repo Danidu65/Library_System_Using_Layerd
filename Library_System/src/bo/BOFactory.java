@@ -1,10 +1,10 @@
-package bo.custom;
+package bo;
 
-import bo.custom.impl.CustomerBOImpl;
-import bo.custom.impl.ItemBOImpl;
-import bo.custom.impl.PurchaseOrderBOImpl;
+import bo.custom.impl.*;
 
 import java.sql.SQLException;
+
+import static javafx.css.StyleOrigin.AUTHOR;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -14,7 +14,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        CUSTOMER , ITEM , PURCHASE_ORDER
+        AUTHOR , BOOK , MEMBER , PUBLISHER , SUPLIER , USER
 
     }
 
@@ -23,14 +23,20 @@ public class BOFactory {
 
     }
 
-    public SuperBO getBO(BOTypes boTypes) throws SQLException, ClassNotFoundException {
+    public bo.custom.SuperBO getBO(BOTypes boTypes) throws SQLException, ClassNotFoundException {
         switch (boTypes){
-            case CUSTOMER :
-                return new CustomerBOImpl();
-            case ITEM :
-                return new ItemBOImpl();
-            case PURCHASE_ORDER:
-                return new PurchaseOrderBOImpl();
+            case AUTHOR :
+                return (bo.custom.SuperBO) new AuthorBOImpl();
+            case BOOK :
+                return (bo.custom.SuperBO) new BookBOImpl();
+            case MEMBER:
+                return (bo.custom.SuperBO) new MemberBOImpl();
+            case PUBLISHER:
+                return (bo.custom.SuperBO) new PublisherBOImpl();
+            case SUPLIER:
+                return (bo.custom.SuperBO) new SuplierBOImpl();
+            case USER:
+                return (bo.custom.SuperBO) new UserBOImpl();
             default :
                 return null;
 
