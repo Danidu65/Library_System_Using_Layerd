@@ -2,11 +2,6 @@ package view.tdm;
 
 import java.io.Serializable;
 
-/**
- * @author : Sanu Vithanage
- * @since : 0.1.0
- **/
-
 public class CustomerTM implements Comparable<CustomerTM> {
     private String id;
     private String name;
