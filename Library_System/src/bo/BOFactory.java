@@ -23,20 +23,20 @@ public class BOFactory {
 
     }
 
-    public bo.custom.SuperBO getBO(BOTypes boTypes) throws SQLException, ClassNotFoundException {
+    public bo.SuperBO getBO(BOTypes boTypes) throws SQLException, ClassNotFoundException {
         switch (boTypes){
             case AUTHOR :
-                return (bo.custom.SuperBO) new AuthorBOImpl();
+                return (bo.SuperBO) new AuthorBOImpl();
             case BOOK :
-                return (bo.custom.SuperBO) new BookBOImpl();
+                return (bo.SuperBO) new BookBOImpl();
             case MEMBER:
-                return (bo.custom.SuperBO) new MemberBOImpl();
+                return (bo.SuperBO) new MemberBOImpl();
             case PUBLISHER:
-                return (bo.custom.SuperBO) new PublisherBOImpl();
+                return (bo.SuperBO) new PublisherBOImpl();
             case SUPLIER:
-                return (bo.custom.SuperBO) new SuplierBOImpl();
+                return (bo.SuperBO) new SuplierBOImpl();
             case USER:
-                return (bo.custom.SuperBO) new UserBOImpl();
+                return (bo.SuperBO) new UserBOImpl();
             default :
                 return null;
 
