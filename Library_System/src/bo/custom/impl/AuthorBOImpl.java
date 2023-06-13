@@ -1,16 +1,94 @@
 package bo.custom.impl;
 
+import bo.BOFactory;
 import bo.custom.AuthorBO;
 import dao.DAOFactory;
 import dao.custom.AuthorDAO;
 import dto.AuthorDTO;
+import entity.Author;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AuthorBOImpl implements AuthorBO {
-
     AuthorDAO authorDAO = (AuthorDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.AUTHOR);
+
+    @Override
+    public ArrayList<AuthorDTO> getAllAuthors() throws SQLException, ClassNotFoundException {
+        ArrayList<AuthorDTO> authorDTOArrayList = new ArrayList<>();
+
+        for (Author author : authorDAO.loadAllAuthors() ) {
+            authorDTOArrayList.add(new AuthorDTO(author.getAuthorId() , author.getName() , author.getBookName() ));
+        }
+
+        return authorDTOArrayList;
+    }
+
+    @Override
+    public String generateAuthorID() throws SQLException, ClassNotFoundException {
+        return authorDAO.genarateTurnId();
+    }
+
+    @Override
+    public boolean updateAuthor(AuthorDTO dto) throws SQLException, ClassNotFoundException {
+        return authorDAO.update(new Author(dto.getId() , dto.getName() , dto.getBookName()) );
+    }
+
+    @Override
+    public boolean addAuthor(AuthorDTO dto) throws SQLException, ClassNotFoundException {
+        return authorDAO.add(new Author(dto.getId() , dto.getName() , dto.getBookName()) );
+    }
+
+    @Override
+    public AuthorDTO searchAuthor(String id) throws SQLException, ClassNotFoundException {
+        Author author = authorDAO.search(id);
+        return new AuthorDTO(author.getAuthorId() , author.getName() , author.getBookName() );
+    }
+
+    @Override
+    public boolean deleteAuthor(String id) throws SQLException, ClassNotFoundException {
+        return authorDAO.delete(id);
+    }
+
+    @Override
+    public ArrayList<String> getAllAuthorIds() throws SQLException, ClassNotFoundException {
+        return authorDAO.loadAllAuthorIds();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*AuthorDAO authorDAO = (AuthorDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.AUTHOR);
 
     @Override
     public ArrayList<AuthorDTO> getAllAuthors() throws SQLException, ClassNotFoundException {
@@ -45,5 +123,5 @@ public class AuthorBOImpl implements AuthorBO {
     @Override
     public String generateNewAuthorID() throws SQLException, ClassNotFoundException {
         return authorDAO.generateNewID();
-    }
+    }*/
 }

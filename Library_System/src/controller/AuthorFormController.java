@@ -1,7 +1,10 @@
 package controller;
 
+import bo.BOFactory;
+import bo.custom.AuthorBO;
 import com.jfoenix.controls.JFXTextField;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import dto.AuthorDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,22 +55,39 @@ public class AuthorFormController implements Initializable {
     private JFXTextField txtBookName;
 
     @FXML
-    private TableView<Author> table;
+    private TableView<AuthorDTO> table;
 
     @FXML
-    private TableColumn<Author,String> tblAuthorId;
+    private TableColumn<AuthorDTO,String> tblAuthorId;
 
     @FXML
-    private TableColumn<Author,String> tblAuthorName;
+    private TableColumn<AuthorDTO,String> tblAuthorName;
 
     @FXML
-    private TableColumn<Author,String> tblBookName;
+    private TableColumn<AuthorDTO,String> tblBookName;
+
+    AuthorBO authorBO;
+
+    {
+        try {
+            authorBO = (AuthorBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.AUTHOR);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     @FXML
     void delete(ActionEvent event) throws SQLException {
         String searchId = txtSearchAuthor.getText();
-        boolean delete = AuthorModel.delete(searchId);
+        try {
+            boolean delete = authorBO.deleteAuthor(searchId);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         LoadTable();
 
         txtAuthorId.clear();
@@ -81,13 +101,17 @@ public class AuthorFormController implements Initializable {
         String name = txtAuthorName.getText();
         String bookName = txtBookName.getText();
 
-        Author author = new Author();
+        AuthorDTO author = new AuthorDTO();
 
         author.setId(authorId);
         author.setName(name);
         author.setBookName(bookName);
 
-        boolean authors = AuthorModel.Save(author);
+        try {
+            boolean authors = authorBO.addAuthor(author);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         LoadTable();
 
         txtAuthorId.clear();
@@ -99,7 +123,12 @@ public class AuthorFormController implements Initializable {
     void search(ActionEvent event) throws SQLException {
         String searchId = txtSearchAuthor.getText();
 
-        Author author = AuthorModel.Search(searchId);
+        AuthorDTO author = null;
+        try {
+            author = authorBO.searchAuthor(searchId);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         txtAuthorId.setText(author.getId());
         txtAuthorName.setText(author.getName());
@@ -112,13 +141,17 @@ public class AuthorFormController implements Initializable {
         String Name = txtAuthorName.getText();
         String BookName = txtBookName.getText();
 
-        Author author = new Author();
+        AuthorDTO author = new AuthorDTO();
 
         author.setId(id);
         author.setName(Name);
         author.setBookName(BookName);
 
-        boolean authors = AuthorModel.Update(author);
+        try {
+            boolean authors = authorBO.updateAuthor(author);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         LoadTable();
     }
 
@@ -135,16 +168,23 @@ public class AuthorFormController implements Initializable {
 //        table.refresh();
     }
     private void LoadTable() throws SQLException {
-        ArrayList<Author> authors = AuthorModel.LoadAllAuthors();
+        ArrayList<AuthorDTO> authors = null;
+        try {
+            authors = authorBO.getAllAuthors();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         this.table.setItems(FXCollections.observableArrayList(authors));
     }
     private void setTurnId() {
         try {
-            String newTurnId = AuthorModel.genarateTurnId();
+            String newTurnId = authorBO.generateAuthorID();
             txtAuthorId.setText(newTurnId);
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

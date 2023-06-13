@@ -20,7 +20,7 @@ public class DAOFactory {
     public SuperDAO getDAO(DAOTypes daoTypes){
         switch (daoTypes) {
             case AUTHOR:
-                return (SuperDAO) new AuthorDAOimpl();
+                return new AuthorDAOimpl();
             case ITEM :
                 return new ItemDAOimpl();
             case ORDER :

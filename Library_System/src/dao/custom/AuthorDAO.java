@@ -1,19 +1,15 @@
 package dao.custom;
 
+import dao.CrudDAO;
+import entity.Author;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface AuthorDAO {
-    static <Author> boolean add(Author author) {
-        return false;
-    }
+public interface AuthorDAO extends CrudDAO<Author , String> {
+    public ArrayList<String> loadAllAuthorIds() throws SQLException, ClassNotFoundException;
+    public ArrayList<Author> loadAllAuthors() throws SQLException, ClassNotFoundException;
+    public String genarateTurnId() throws SQLException, ClassNotFoundException;
 
-    <Author> ArrayList<Author> getAll();
 
-    String generateNewID();
-
-    boolean delete(String id);
-
-    boolean search(String id);
-
-    boolean update(Author author);
 }
