@@ -2,7 +2,7 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.PublisherDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
+import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.entity.Publisher;
 
 import java.sql.Connection;
@@ -13,19 +13,20 @@ import java.util.ArrayList;
 
 public class PublisherDAOImpl implements PublisherDAO {
     @Override
-    public boolean add(Publisher publisher) throws SQLException, ClassNotFoundException {
-        Connection con = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO publisher (publisherId, name, yearOfPublish,publishedBook) VALUES(?, ?, ?, ?)";
-
-        PreparedStatement stm = con.prepareStatement(sql);
-
-        stm.setObject(1,publisher.getId());
-        stm.setObject(2,publisher.getName());
-        stm.setObject(3,publisher.getYear());
-        stm.setObject(4,publisher.getPublishedBook());
-
-        int result = stm.executeUpdate();
-        return result > 0;
+    public boolean add(Author publisher) throws SQLException, ClassNotFoundException {
+//        Connection con = DBConnection.getInstance().getConnection();
+//        String sql = "INSERT INTO publisher (publisherId, name, yearOfPublish,publishedBook) VALUES(?, ?, ?, ?)";
+//
+//        PreparedStatement stm = con.prepareStatement(sql);
+//
+//        stm.setObject(1,publisher.getId());
+//        stm.setObject(2,publisher.getName());
+//        stm.setObject(3,publisher.getYear());
+//        stm.setObject(4,publisher.getPublishedBook());
+//
+//        int result = stm.executeUpdate();
+//        return result > 0;
+        return false;
     }
 
     @Override
