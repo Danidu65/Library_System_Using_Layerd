@@ -11,6 +11,6 @@ public interface AutorBO {
     public boolean autorDelete(String id) throws SQLException, ClassNotFoundException;
     public boolean autorUpdate(AuthorDTO Aotor) throws SQLException, ClassNotFoundException;
     public String autorGenarateTurnId() throws SQLException, ClassNotFoundException;
-    public ArrayList<String> loadAllAutorIds() throws SQLException;
+    public ArrayList<String> loadAllAutorIds() throws SQLException, ClassNotFoundException;
     public ArrayList<AuthorDTO> loadAllAutors() throws SQLException, ClassNotFoundException;
 }
