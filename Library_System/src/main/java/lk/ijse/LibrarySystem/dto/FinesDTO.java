@@ -1,12 +1,12 @@
 package lk.ijse.LibrarySystem.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 
 public class FinesDTO {
     private String Id;

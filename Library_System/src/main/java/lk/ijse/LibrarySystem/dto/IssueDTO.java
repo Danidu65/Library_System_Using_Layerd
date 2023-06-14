@@ -1,12 +1,12 @@
 package lk.ijse.LibrarySystem.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 
 public class IssueDTO {
     private String issusId;
