@@ -1,6 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.SQLUtil;
+import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.AutorDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.dto.AuthorDTO;
@@ -12,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AuthorDAOImpl implements AutorDAO {
+public class AuthorDAOImpl implements AutorDAO, SuperDAO {
 
     @Override
     public boolean add(Author author) throws SQLException, ClassNotFoundException {

@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
+import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.PublisherDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.entity.Author;
@@ -11,9 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class PublisherDAOImpl implements PublisherDAO {
+public class PublisherDAOImpl implements PublisherDAO, SuperDAO {
     @Override
-    public boolean add(Author publisher) throws SQLException, ClassNotFoundException {
+    public boolean add(Author author) throws SQLException, ClassNotFoundException {
 //        Connection con = DBConnection.getInstance().getConnection();
 //        String sql = "INSERT INTO publisher (publisherId, name, yearOfPublish,publishedBook) VALUES(?, ?, ?, ?)";
 //
