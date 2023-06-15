@@ -114,22 +114,7 @@ public class AuthorFormController implements Initializable {
 //        LoadTable();
     }
 
-//    @SneakyThrows
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        ((TableColumn)this.table.getColumns().get(0)).setCellValueFactory(new PropertyValueFactory("id"));
-//        ((TableColumn)this.table.getColumns().get(1)).setCellValueFactory(new PropertyValueFactory("name"));
-//        ((TableColumn)this.table.getColumns().get(2)).setCellValueFactory(new PropertyValueFactory("bookName"));
-//
-//        txtAuthorId.setEditable(false);
-//        LoadTable();
-//        setTurnId();
-////        table.refresh();
-//    }
-//    private void LoadTable() throws SQLException, ClassNotFoundException {
-//        ArrayList<AuthorDTO> authors = autorBO.loadAllAutors();
-//        this.table.setItems(FXCollections.observableArrayList(authors));
-//    }
+
     private void setTurnId() {
         try {
             String newTurnId = autorBO.autorGenarateTurnId();
