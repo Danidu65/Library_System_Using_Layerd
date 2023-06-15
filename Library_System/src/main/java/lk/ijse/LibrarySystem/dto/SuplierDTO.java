@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dto;
 
+import lk.ijse.LibrarySystem.entity.Suplier;
 import lombok.*;
 
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @Getter
 
-public class SuplierDTO {
+public class SuplierDTO extends Suplier {
     private String Id;
     private String Name;
     private String Contact;

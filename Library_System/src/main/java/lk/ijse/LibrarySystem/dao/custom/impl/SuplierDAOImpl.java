@@ -3,7 +3,6 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 import lk.ijse.LibrarySystem.dao.custom.SuplierDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.dto.SuplierDTO;
-import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.entity.Suplier;
 
 import java.sql.Connection;
@@ -16,7 +15,7 @@ public abstract class SuplierDAOImpl implements SuplierDAO {
     @Override
     public boolean add(Suplier suplier) throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO supplier(SupplierId, Name, contact ,Address,supliyBooks) VALUES(?, ?, ?, ? , ?)";
+        String sql = "INSERT INTO supplier values (?, ?, ?, ? , ?)";
 
         PreparedStatement stm = con.prepareStatement(sql);
 
@@ -26,8 +25,8 @@ public abstract class SuplierDAOImpl implements SuplierDAO {
         stm.setObject(4,suplier.getAddress());
         stm.setObject(5,suplier.getSuplierBooks());
 
-        int result = stm.executeUpdate();
-        return result > 0;
+//        int result = stm.executeUpdate();
+        return  stm.executeUpdate() > 0;
     }
 
     @Override
@@ -67,12 +66,7 @@ public abstract class SuplierDAOImpl implements SuplierDAO {
         stm.setObject(4,suplier.getSuplierBooks());
         stm.setObject(5, suplier.getId());
 
-        int result = stm.executeUpdate();
-
-        if (result == 1) {
-            return true;
-        }
-        return null;
+        return stm.executeUpdate() > 0;
     }
 
     @Override
@@ -96,7 +90,7 @@ public abstract class SuplierDAOImpl implements SuplierDAO {
 
         ResultSet result = stm.executeQuery();
 
-        ArrayList<SuplierDTO> supliers = new ArrayList<>();
+        ArrayList<Suplier> supliers = new ArrayList<>();
 
         while(result.next()) {
             SuplierDTO suplier = new SuplierDTO();
