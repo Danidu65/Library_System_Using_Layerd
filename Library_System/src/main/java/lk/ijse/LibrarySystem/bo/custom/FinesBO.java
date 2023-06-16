@@ -1,4 +1,6 @@
 package lk.ijse.LibrarySystem.bo.custom;
 
-public interface FinesBO {
+import lk.ijse.LibrarySystem.bo.SuperBO;
+
+public interface FinesBO extends SuperBO {
 }

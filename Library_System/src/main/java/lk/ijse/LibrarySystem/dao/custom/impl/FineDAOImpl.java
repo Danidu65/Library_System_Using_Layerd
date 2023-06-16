@@ -40,7 +40,7 @@ public class FineDAOImpl implements FineDAO {
     }
 
     @Override
-    public ArrayList<SuplierDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Fines> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

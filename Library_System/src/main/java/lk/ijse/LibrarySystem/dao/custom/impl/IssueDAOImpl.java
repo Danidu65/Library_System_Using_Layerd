@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class IssueDAOImpl implements IssueDAO {
 
-    public boolean issuseFrom(IssueDTO issuse, String qty, String bookd) throws SQLException, ClassNotFoundException {
+    public boolean issuseFrom(IssueDTO issuse) throws SQLException, ClassNotFoundException {
         DBConnection.getInstance().getConnection().setAutoCommit(false);
 
         Connection con = DBConnection.getInstance().getConnection();

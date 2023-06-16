@@ -49,7 +49,7 @@ public class AutorBOImpl implements AutorBO {
     public ArrayList<AuthorDTO> loadAllAutors() throws SQLException, ClassNotFoundException {
         ArrayList<AuthorDTO> allAuthors = new ArrayList<>();
 
-        for (Author a : autorDAO.getAll()){
+        for (Author a : autorDAO.loadAll()){
             allAuthors.add(new AuthorDTO(a.getId(),a.getName(),a.getBookName()));
         }
         return allAuthors;

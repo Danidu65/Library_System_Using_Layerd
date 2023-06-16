@@ -40,7 +40,7 @@ public class ExibitionDAOImpl implements ExibitionDAO {
     }
 
     @Override
-    public ArrayList<SuplierDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Exibition> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

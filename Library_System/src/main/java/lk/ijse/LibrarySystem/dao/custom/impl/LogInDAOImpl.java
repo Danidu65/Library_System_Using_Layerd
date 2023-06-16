@@ -40,7 +40,7 @@ public class LogInDAOImpl implements LoginDAO {
     }
 
     @Override
-    public ArrayList<SuplierDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Login> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

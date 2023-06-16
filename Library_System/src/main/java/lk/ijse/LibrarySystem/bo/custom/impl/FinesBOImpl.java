@@ -1,4 +1,6 @@
 package lk.ijse.LibrarySystem.bo.custom.impl;
 
-public class FinesBOImpl {
+import lk.ijse.LibrarySystem.bo.custom.FinesBO;
+
+public class FinesBOImpl implements FinesBO {
 }

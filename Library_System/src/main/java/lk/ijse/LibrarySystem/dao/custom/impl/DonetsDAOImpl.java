@@ -40,7 +40,7 @@ public class DonetsDAOImpl implements DonetsDAO {
     }
 
     @Override
-    public ArrayList<SuplierDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Donates> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

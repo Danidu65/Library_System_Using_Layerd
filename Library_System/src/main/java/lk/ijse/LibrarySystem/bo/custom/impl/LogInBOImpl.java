@@ -1,4 +1,6 @@
 package lk.ijse.LibrarySystem.bo.custom.impl;
 
-public class LogInBOImpl {
+import lk.ijse.LibrarySystem.bo.custom.LogInBO;
+
+public class LogInBOImpl implements LogInBO {
 }
