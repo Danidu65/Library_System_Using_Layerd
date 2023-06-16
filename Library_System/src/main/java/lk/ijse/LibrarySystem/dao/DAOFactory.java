@@ -1,8 +1,6 @@
 package lk.ijse.LibrarySystem.dao;
 
-import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
-import lk.ijse.LibrarySystem.dao.custom.impl.PublisherDAOImpl;
-import lk.ijse.LibrarySystem.dao.custom.impl.SuplierDAOImpl;
+import lk.ijse.LibrarySystem.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -23,13 +21,13 @@ public class DAOFactory {
             case BOOK:
                 return new BookDAOImpl();
             case DONETION:
-                return new DonetionDAOImpl();
+                return new DonetsDAOImpl();
             case EXIBITION:
                 return new ExibitionDAOImpl();
             case ISSUSE:
-                return new IssuseDAOImpl();
+                return new IssueDAOImpl();
             case MEMBER:
-                return new MemberDAOImpl();
+                return  new MemberDAOImpl();
             case PUBLISHER:
                 return new PublisherDAOImpl();
             case RETURN:

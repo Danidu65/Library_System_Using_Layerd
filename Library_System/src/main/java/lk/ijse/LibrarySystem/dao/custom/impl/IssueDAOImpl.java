@@ -1,4 +1,6 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
-public class IssueDAOImpl {
+import lk.ijse.LibrarySystem.dao.SuperDAO;
+
+public class IssueDAOImpl implements SuperDAO {
 }
