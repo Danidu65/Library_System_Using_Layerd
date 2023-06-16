@@ -1,4 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom;
 
-public interface FineDAO {
+import lk.ijse.LibrarySystem.dao.CrudDAO;
+import lk.ijse.LibrarySystem.entity.Fines;
+
+public interface FineDAO extends CrudDAO<Fines> {
 }

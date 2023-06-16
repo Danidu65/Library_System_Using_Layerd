@@ -1,4 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom;
 
-public interface ExibitionDAO {
+import lk.ijse.LibrarySystem.dao.CrudDAO;
+import lk.ijse.LibrarySystem.entity.Exibition;
+
+public interface ExibitionDAO extends CrudDAO<Exibition> {
 }

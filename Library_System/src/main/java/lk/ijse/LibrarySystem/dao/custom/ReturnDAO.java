@@ -1,4 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom;
 
-public interface ReturnDAO {
+import lk.ijse.LibrarySystem.dao.CrudDAO;
+import lk.ijse.LibrarySystem.entity.Return;
+
+public interface ReturnDAO extends CrudDAO<Return> {
 }
