@@ -14,4 +14,7 @@ public class Book {
     private String Author;
     private int Qty;
     private String Discription;
+
+    public Book(String id, String name, String author, String discription, int qty) {
+    }
 }

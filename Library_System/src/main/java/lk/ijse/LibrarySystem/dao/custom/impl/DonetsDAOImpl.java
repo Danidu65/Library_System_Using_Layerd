@@ -1,6 +1,5 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
-import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.DonetsDAO;
 import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.entity.Donates;
@@ -9,18 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DonetsDAOImpl implements DonetsDAO {
+
     @Override
-    public boolean add(Author author) throws SQLException, ClassNotFoundException {
+    public boolean add(Donates dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public Donates search(String id) throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Donates entity) throws SQLException, ClassNotFoundException {
+    public boolean update(Donates dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -30,17 +25,22 @@ public class DonetsDAOImpl implements DonetsDAO {
     }
 
     @Override
-    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+    public Donates search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public ArrayList<Donates> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> loadAllIds() throws SQLException {
         return null;
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Donates> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

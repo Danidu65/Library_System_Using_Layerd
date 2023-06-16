@@ -1,6 +1,5 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
-import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.ReturnDAO;
 import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.entity.Return;
@@ -9,18 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReturnDAOImpl implements ReturnDAO {
+
     @Override
-    public boolean add(Author author) throws SQLException, ClassNotFoundException {
+    public boolean add(Return dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public Return search(String id) throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Return entity) throws SQLException, ClassNotFoundException {
+    public boolean update(Return dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -30,17 +25,22 @@ public class ReturnDAOImpl implements ReturnDAO {
     }
 
     @Override
-    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+    public Return search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public ArrayList<Return> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> loadAllIds() throws SQLException {
         return null;
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Return> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

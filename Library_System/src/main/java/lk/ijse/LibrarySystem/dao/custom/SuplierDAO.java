@@ -6,5 +6,4 @@ import lk.ijse.LibrarySystem.entity.Suplier;
 import java.sql.SQLException;
 
 public interface SuplierDAO extends CrudDAO<Suplier> {
-    boolean add(Suplier suplier) throws SQLException, ClassNotFoundException;
 }

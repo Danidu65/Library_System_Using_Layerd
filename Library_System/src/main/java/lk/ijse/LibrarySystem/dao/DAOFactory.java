@@ -4,7 +4,6 @@ import lk.ijse.LibrarySystem.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
-
     private DAOFactory(){
 
     }
@@ -21,19 +20,19 @@ public class DAOFactory {
             case BOOK:
                 return (SuperDAO) new BookDAOImpl();
             case DONETION:
-                return new DonetsDAOImpl();
+                return (SuperDAO) new DonetsDAOImpl();
             case EXIBITION:
-                return new ExibitionDAOImpl();
+                return (SuperDAO) new ExibitionDAOImpl();
             case ISSUSE:
-                return new IssueDAOImpl();
+                return (SuperDAO) new IssueDAOImpl();
             case MEMBER:
-                return  new MemberDAOImpl();
+                return (SuperDAO) new MemberDAOImpl();
             case PUBLISHER:
-                return new PublisherDAOImpl();
+                return (SuperDAO) new PublisherDAOImpl();
             case RETURN:
-                return new ReturnDAOImpl();
+                return (SuperDAO) new ReturnDAOImpl();
             case SUPPLIER:
-                return new SuplierDAOImpl();
+                return (SuperDAO) new SuplierDAOImpl();
             case USER:
                 return (SuperDAO) new UserDAOImpl();
             default:

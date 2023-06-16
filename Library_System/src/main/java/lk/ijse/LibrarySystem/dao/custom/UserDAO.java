@@ -6,5 +6,4 @@ import lk.ijse.LibrarySystem.entity.User;
 import java.sql.SQLException;
 
 public interface UserDAO extends CrudDAO<User> {
-    boolean add(User user) throws SQLException, ClassNotFoundException;
 }

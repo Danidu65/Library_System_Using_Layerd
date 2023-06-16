@@ -1,6 +1,5 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
-import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.IssueDAO;
 import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.entity.Issue;
@@ -9,18 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class IssueDAOImpl implements IssueDAO {
+
     @Override
-    public boolean add(Author author) throws SQLException, ClassNotFoundException {
+    public boolean add(Issue dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public Issue search(String id) throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Issue entity) throws SQLException, ClassNotFoundException {
+    public boolean update(Issue dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -30,17 +25,22 @@ public class IssueDAOImpl implements IssueDAO {
     }
 
     @Override
-    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+    public Issue search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public ArrayList<Issue> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> loadAllIds() throws SQLException {
         return null;
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Issue> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

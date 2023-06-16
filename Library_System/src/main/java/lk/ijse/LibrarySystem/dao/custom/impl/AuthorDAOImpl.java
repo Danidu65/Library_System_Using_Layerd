@@ -1,10 +1,8 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.SQLUtil;
-import lk.ijse.LibrarySystem.dao.SuperDAO;
 import lk.ijse.LibrarySystem.dao.custom.AutorDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
-import lk.ijse.LibrarySystem.dto.AuthorDTO;
 import lk.ijse.LibrarySystem.entity.Author;
 
 import java.sql.Connection;
@@ -21,6 +19,19 @@ public class AuthorDAOImpl implements AutorDAO {
     }
 
     @Override
+    public boolean update(Author author) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("update author set name=?,bookName=? where AuthorId=?", author.getId(),
+                author.getName(),
+                author.getBookName()
+        );
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("delete from autor where AutorId =?",id);
+    }
+
+    @Override
     public Author search(String id) throws SQLException, ClassNotFoundException {
         ResultSet rst =  SQLUtil.execute("select * from author where authorId=?",id);
 
@@ -30,59 +41,49 @@ public class AuthorDAOImpl implements AutorDAO {
                     rst.getString(2) ,
                     rst.getString(3) ,
                     rst.getString(4)
-                );
+            );
         }
         return null;
     }
 
     @Override
-    public boolean update(Author author) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("update author set name=?,bookName=? where AuthorId=?", author.getId(),author.getName(),author.getBookName());
-    }
-
-    @Override
-    public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("delete from author where authorId = ?", id);
-    }
-
-    @Override
-    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> loadAllIds() throws SQLException {
         Connection con = DBConnection.getInstance().getConnection();
 
-        String sql = "select  authorId from Author";
+        String sql = "select  AutorId from Autor";
 
         PreparedStatement stm = con.prepareStatement(sql);
 
         ResultSet result = stm.executeQuery();
 
-        ArrayList<String> AuthorIds = new ArrayList<>();
+        ArrayList<String> AutorIds = new ArrayList<>();
 
         while (result.next()) {
-            AuthorIds.add(result.getString(1));
+            AutorIds.add(result.getString(1));
         }
-        return AuthorIds;
-    }
-
-    @Override
-    public ArrayList<Author> getAll() throws SQLException, ClassNotFoundException {
-        ArrayList <Author> allAuthors = new ArrayList<>();
-        ResultSet rst = SQLUtil.execute("select * from author");
-        while (rst.next()){
-            Author autor = new Author(rst.getString("AuthorId"),rst.getString("name"),rst.getString("bookName"));
-            allAuthors.add(autor);
-        }
-        return allAuthors;
+        return AutorIds;
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT authorId FROM author ORDER BY authorId DESC LIMIT 1");
-        if (rst.next()) {
+        ResultSet rst =  SQLUtil.execute("SELECT autorId FROM autor ORDER BY autorId DESC LIMIT 1");
+        if (rst.next()){
             String id = rst.getString("id");
-            int newCustomerId = Integer.parseInt(id.replace("A00-", "")) + 1;
-            return String.format("A00-%03d", newCustomerId);
+            int newAutorId = Integer.parseInt(id.replace("A00-", "")) + 1;
+            return String.format("A00-%03d", newAutorId);
         } else {
-            return "A00-001";
+            return "A001";
         }
+    }
+
+    @Override
+    public ArrayList<Author> loadAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Author> allItems = new ArrayList<>();
+        ResultSet rst = SQLUtil.execute("SELECT * FROM Item");
+        while (rst.next()) {
+            allItems.add(new Author(rst.getString("AutorID"), rst.getString("AutorName"),
+                    rst.getString("BookName"),rst.getString("BookID")));
+        }
+        return allItems;
     }
 }
