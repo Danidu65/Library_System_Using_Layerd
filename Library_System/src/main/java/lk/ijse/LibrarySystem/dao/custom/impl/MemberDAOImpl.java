@@ -3,7 +3,6 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 import lk.ijse.LibrarySystem.dao.custom.MemberDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.dto.MemberDTO;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Member;
 
 import java.sql.Connection;
@@ -136,7 +135,7 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Member> loadAll() throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from member";
 
@@ -144,7 +143,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         ResultSet result = stm.executeQuery();
 
-        ArrayList<MemberDTO> members = new ArrayList<>();
+        ArrayList<Member> members = new ArrayList<>();
 
         while (result.next()) {
             MemberDTO member = new MemberDTO();

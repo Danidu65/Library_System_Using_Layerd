@@ -13,51 +13,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserDAOImpl implements UserDAO {
-    @Override
-    public boolean add(User user) throws SQLException, ClassNotFoundException {
-        Connection con = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO user(name , userName, password) VALUES(?, ?, ?)";
-
-        PreparedStatement stm = con.prepareStatement(sql);
-
-        stm.setObject(1,user.getName());
-        stm.setObject(2,user.getUserName());
-        stm.setObject(3,user.getPassWord());
-
-        int result = stm.executeUpdate();
-        return result > 0;
-    }
 
     @Override
-    public boolean add(Author author) throws SQLException, ClassNotFoundException {
+    public boolean add(User dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public User search(String name) throws SQLException, ClassNotFoundException {
-        Connection con = DBConnection.getInstance().getConnection();
-        String sql = "select * from user where userName = ?";
-
-        PreparedStatement stm = con.prepareStatement(sql);
-
-        stm.setObject(1, name);
-
-        ResultSet result = stm.executeQuery();
-
-        if (result.next()) {
-            UserDTO user = new UserDTO();
-            user.setName(result.getString(1));
-            user.setUserName(result.getString(2));
-            user.setPassWord(result.getString(3));
-            return user;
-        }
-
+    public Boolean update(User dto) throws SQLException, ClassNotFoundException {
         return null;
-    }
-
-    @Override
-    public Boolean update(User entity) throws SQLException, ClassNotFoundException {
-        return false;
     }
 
     @Override
@@ -66,12 +30,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+    public User search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public ArrayList<User> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> loadAllIds() throws SQLException {
         return null;
     }
 
@@ -79,4 +43,76 @@ public class UserDAOImpl implements UserDAO {
     public String generateNewID() throws SQLException, ClassNotFoundException {
         return null;
     }
+
+    @Override
+    public ArrayList<User> loadAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }
+//    @Override
+//    public boolean add(User user) throws SQLException, ClassNotFoundException {
+//        Connection con = DBConnection.getInstance().getConnection();
+//        String sql = "INSERT INTO user(name , userName, password) VALUES(?, ?, ?)";
+//
+//        PreparedStatement stm = con.prepareStatement(sql);
+//
+//        stm.setObject(1,user.getName());
+//        stm.setObject(2,user.getUserName());
+//        stm.setObject(3,user.getPassWord());
+//
+//        int result = stm.executeUpdate();
+//        return result > 0;
+//    }
+//
+//    @Override
+//    public boolean add(Author author) throws SQLException, ClassNotFoundException {
+//        return false;
+//    }
+//
+//    @Override
+//    public User search(String name) throws SQLException, ClassNotFoundException {
+//        Connection con = DBConnection.getInstance().getConnection();
+//        String sql = "select * from user where userName = ?";
+//
+//        PreparedStatement stm = con.prepareStatement(sql);
+//
+//        stm.setObject(1, name);
+//
+//        ResultSet result = stm.executeQuery();
+//
+//        if (result.next()) {
+//            UserDTO user = new UserDTO();
+//            user.setName(result.getString(1));
+//            user.setUserName(result.getString(2));
+//            user.setPassWord(result.getString(3));
+//            return user;
+//        }
+//
+//        return null;
+//    }
+//
+//    @Override
+//    public Boolean update(User entity) throws SQLException, ClassNotFoundException {
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+//        return false;
+//    }
+//
+//    @Override
+//    public ArrayList<String> loadAllIds() throws SQLException, ClassNotFoundException {
+//        return null;
+//    }
+//
+//    @Override
+//    public ArrayList<User> getAll() throws SQLException, ClassNotFoundException {
+//        return null;
+//    }
+//
+//    @Override
+//    public String generateNewID() throws SQLException, ClassNotFoundException {
+//        return null;
+//    }
+//}

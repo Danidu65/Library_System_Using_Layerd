@@ -3,7 +3,7 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 import lk.ijse.LibrarySystem.dao.SQLUtil;
 import lk.ijse.LibrarySystem.dao.custom.BookDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
+import lk.ijse.LibrarySystem.dto.SuplierDTO;
 import lk.ijse.LibrarySystem.entity.Book;
 
 import java.sql.Connection;
@@ -90,7 +90,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Book> loadAll() throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from book";
 

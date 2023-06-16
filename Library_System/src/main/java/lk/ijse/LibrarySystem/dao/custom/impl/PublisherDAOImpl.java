@@ -118,7 +118,7 @@ public class PublisherDAOImpl implements PublisherDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Publisher> loadAll() throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from publisher";
 
@@ -126,7 +126,7 @@ public class PublisherDAOImpl implements PublisherDAO {
 
         ResultSet result = stm.executeQuery();
 
-        ArrayList<PublisherDTO> publishers = new ArrayList<>();
+        ArrayList<Publisher> publishers = new ArrayList<>();
 
         while(result.next()) {
             PublisherDTO publisher = new PublisherDTO();

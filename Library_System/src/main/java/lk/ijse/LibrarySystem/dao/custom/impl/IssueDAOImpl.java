@@ -4,7 +4,6 @@ import lk.ijse.LibrarySystem.dao.SQLUtil;
 import lk.ijse.LibrarySystem.dao.custom.IssueDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.dto.IssueDTO;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Issue;
 
 import java.sql.Connection;
@@ -122,7 +121,7 @@ public class IssueDAOImpl implements IssueDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Issue> loadAll() throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from issuse";
 
@@ -130,10 +129,10 @@ public class IssueDAOImpl implements IssueDAO {
 
         ResultSet result = stm.executeQuery();
 
-        ArrayList<IssueDTO> issuses = new ArrayList<>();
+        ArrayList<Issue> issuses = new ArrayList<>();
 
         while (result.next()) {
-            IssueDTO issuse1 = new IssueDTO();
+            Issue issuse1 = new Issue();
 
             issuse1.setIssusId(result.getString(1));
             issuse1.setBookId(result.getString(2));

@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dto;
 
+import lk.ijse.LibrarySystem.entity.Return;
 import lombok.*;
 
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @Getter
 
-public class IssueDTO {
+public class IssueDTO extends Return {
     private String issusId;
     private String issusDate;
     private String memberId;

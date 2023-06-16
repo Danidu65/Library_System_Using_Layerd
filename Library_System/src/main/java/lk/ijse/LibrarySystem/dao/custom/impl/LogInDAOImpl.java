@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.LoginDAO;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
+import lk.ijse.LibrarySystem.dto.SuplierDTO;
 import lk.ijse.LibrarySystem.entity.Login;
 
 import java.sql.SQLException;
@@ -40,7 +40,7 @@ public class LogInDAOImpl implements LoginDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<SuplierDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

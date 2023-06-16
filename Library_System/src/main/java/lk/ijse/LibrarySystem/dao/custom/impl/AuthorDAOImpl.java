@@ -3,8 +3,9 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 import lk.ijse.LibrarySystem.dao.SQLUtil;
 import lk.ijse.LibrarySystem.dao.custom.AutorDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
-import lk.ijse.LibrarySystem.dto.PublisherDTO;
+import lk.ijse.LibrarySystem.dto.SuplierDTO;
 import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.entity.Suplier;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -78,7 +79,7 @@ public class AuthorDAOImpl implements AutorDAO {
     }
 
     @Override
-    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Author> loadAll() throws SQLException, ClassNotFoundException {
         ArrayList<Author> allItems = new ArrayList<>();
         ResultSet rst = SQLUtil.execute("SELECT * FROM Item");
         while (rst.next()) {
