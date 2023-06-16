@@ -17,9 +17,9 @@ public class DAOFactory {
     public SuperDAO getDAO(DAOTypes types){
         switch (types) {
             case AUTOR:
-                return new AuthorDAOImpl();
+                return (SuperDAO) new AuthorDAOImpl();
             case BOOK:
-                return new BookDAOImpl();
+                return (SuperDAO) new BookDAOImpl();
             case DONETION:
                 return new DonetsDAOImpl();
             case EXIBITION:
@@ -35,7 +35,7 @@ public class DAOFactory {
             case SUPPLIER:
                 return new SuplierDAOImpl();
             case USER:
-                return new UserDAOImpl();
+                return (SuperDAO) new UserDAOImpl();
             default:
                 return null;
         }

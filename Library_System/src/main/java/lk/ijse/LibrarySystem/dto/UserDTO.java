@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dto;
 
+import lk.ijse.LibrarySystem.entity.User;
 import lombok.*;
 
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @Getter
 
-public class UserDTO {
+public class UserDTO extends User {
     private String Name;
     private String userName;
     private String passWord;

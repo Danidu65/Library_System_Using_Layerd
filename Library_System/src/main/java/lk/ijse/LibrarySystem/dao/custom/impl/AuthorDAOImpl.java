@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AuthorDAOImpl implements AutorDAO, SuperDAO {
+public class AuthorDAOImpl implements AutorDAO {
 
     @Override
     public boolean add(Author author) throws SQLException, ClassNotFoundException {
