@@ -1,27 +1,21 @@
 package lk.ijse.LibrarySystem.Controller;
 
 import com.jfoenix.controls.JFXTextField;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
-import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
 import lk.ijse.LibrarySystem.dto.AuthorDTO;
 //import lk.ijse.LibrarySystem.Model.AuthorModel;
-import lk.ijse.LibrarySystem.bo.impl.AutorBOImpl;
-import lk.ijse.LibrarySystem.dto.AuthorDTO;
+import lk.ijse.LibrarySystem.bo.custom.impl.AutorBOImpl;
 import lk.ijse.LibrarySystem.util.Regx.Regx;
-import lombok.SneakyThrows;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

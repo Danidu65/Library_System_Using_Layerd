@@ -1,4 +1,4 @@
-package lk.ijse.LibrarySystem.bo;
+package lk.ijse.LibrarySystem.bo.custom;
 
 import lk.ijse.LibrarySystem.dto.AuthorDTO;
 

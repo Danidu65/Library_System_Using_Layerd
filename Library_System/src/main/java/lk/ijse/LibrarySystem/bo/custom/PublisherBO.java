@@ -1,5 +1,6 @@
-package lk.ijse.LibrarySystem.bo;
+package lk.ijse.LibrarySystem.bo.custom;
 
+import lk.ijse.LibrarySystem.bo.SuperBO;
 import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Publisher;
 

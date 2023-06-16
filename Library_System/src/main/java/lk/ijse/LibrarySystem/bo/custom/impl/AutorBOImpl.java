@@ -1,6 +1,6 @@
-package lk.ijse.LibrarySystem.bo.impl;
+package lk.ijse.LibrarySystem.bo.custom.impl;
 
-import lk.ijse.LibrarySystem.bo.AutorBO;
+import lk.ijse.LibrarySystem.bo.custom.AutorBO;
 import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
 import lk.ijse.LibrarySystem.dto.AuthorDTO;
 import lk.ijse.LibrarySystem.entity.Author;
