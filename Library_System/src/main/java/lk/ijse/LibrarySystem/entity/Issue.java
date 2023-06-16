@@ -9,6 +9,10 @@ import lombok.*;
 @Getter
 
 public class Issue {
-    private String Id;
-    private String type;
+    private String issusId;
+    private String issusDate;
+    private String memberId;
+    private String bookId;
+    private String dueDate;
+    private String issuseQty;
 }

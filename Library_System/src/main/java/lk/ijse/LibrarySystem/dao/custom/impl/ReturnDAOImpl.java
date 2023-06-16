@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.ReturnDAO;
-import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Return;
 
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class ReturnDAOImpl implements ReturnDAO {
     }
 
     @Override
-    public boolean update(Return dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Return dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -40,7 +40,7 @@ public class ReturnDAOImpl implements ReturnDAO {
     }
 
     @Override
-    public ArrayList<Return> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

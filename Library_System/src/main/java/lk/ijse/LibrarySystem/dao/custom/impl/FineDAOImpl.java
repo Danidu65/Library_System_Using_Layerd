@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.FineDAO;
-import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Fines;
 
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class FineDAOImpl implements FineDAO {
     }
 
     @Override
-    public boolean update(Fines dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Fines dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -40,7 +40,7 @@ public class FineDAOImpl implements FineDAO {
     }
 
     @Override
-    public ArrayList<Fines> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

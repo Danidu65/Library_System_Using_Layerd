@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.ExibitionDAO;
-import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Exibition;
 
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class ExibitionDAOImpl implements ExibitionDAO {
     }
 
     @Override
-    public boolean update(Exibition dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Exibition dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -40,7 +40,7 @@ public class ExibitionDAOImpl implements ExibitionDAO {
     }
 
     @Override
-    public ArrayList<Exibition> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

@@ -56,7 +56,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean update(User entity) throws SQLException, ClassNotFoundException {
+    public Boolean update(User entity) throws SQLException, ClassNotFoundException {
         return false;
     }
 

@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dto;
 
+import lk.ijse.LibrarySystem.entity.Member;
 import lombok.*;
 
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @Getter
 
-public class MemberDTO {
+public class MemberDTO extends Member {
     private String id;
     private String name;
     private String Address;

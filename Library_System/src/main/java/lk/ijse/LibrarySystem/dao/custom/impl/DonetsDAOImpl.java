@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.DonetsDAO;
-import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Donates;
 
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class DonetsDAOImpl implements DonetsDAO {
     }
 
     @Override
-    public boolean update(Donates dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Donates dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -40,7 +40,7 @@ public class DonetsDAOImpl implements DonetsDAO {
     }
 
     @Override
-    public ArrayList<Donates> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

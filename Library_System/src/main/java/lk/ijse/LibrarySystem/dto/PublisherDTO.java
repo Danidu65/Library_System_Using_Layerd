@@ -1,5 +1,6 @@
 package lk.ijse.LibrarySystem.dto;
 
+import lk.ijse.LibrarySystem.entity.Publisher;
 import lombok.*;
 
 @Data
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @Getter
 
-public class PublisherDTO {
+public class PublisherDTO extends Publisher {
     private String Id;
     private String Name;
     private String Year;

@@ -1,7 +1,7 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.LoginDAO;
-import lk.ijse.LibrarySystem.entity.Author;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Login;
 
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class LogInDAOImpl implements LoginDAO {
     }
 
     @Override
-    public boolean update(Login dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Login dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -40,7 +40,7 @@ public class LogInDAOImpl implements LoginDAO {
     }
 
     @Override
-    public ArrayList<Login> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

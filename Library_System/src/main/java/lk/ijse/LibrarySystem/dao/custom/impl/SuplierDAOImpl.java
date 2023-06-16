@@ -1,13 +1,9 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
 import lk.ijse.LibrarySystem.dao.custom.SuplierDAO;
-import lk.ijse.LibrarySystem.db.DBConnection;
-import lk.ijse.LibrarySystem.dto.SuplierDTO;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Suplier;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -19,7 +15,7 @@ public class SuplierDAOImpl implements SuplierDAO {
     }
 
     @Override
-    public boolean update(Suplier dto) throws SQLException, ClassNotFoundException {
+    public Boolean update(Suplier dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -44,7 +40,7 @@ public class SuplierDAOImpl implements SuplierDAO {
     }
 
     @Override
-    public ArrayList<Suplier> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

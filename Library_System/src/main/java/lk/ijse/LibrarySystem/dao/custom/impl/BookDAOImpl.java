@@ -1,9 +1,9 @@
 package lk.ijse.LibrarySystem.dao.custom.impl;
 
-import lk.ijse.LibrarySystem.dao.CrudDAO;
 import lk.ijse.LibrarySystem.dao.SQLUtil;
 import lk.ijse.LibrarySystem.dao.custom.BookDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Book;
 
 import java.sql.Connection;
@@ -20,7 +20,7 @@ public class BookDAOImpl implements BookDAO {
                 book.getAuthor(),book.getQty(),book.getDiscription());    }
 
     @Override
-    public boolean update(Book book) throws SQLException, ClassNotFoundException {
+    public Boolean update(Book book) throws SQLException, ClassNotFoundException {
         return  SQLUtil.execute("update book set bookName=?,author_Id=?,qty=?,bookDiscription=? where bookId=?",
                 book.getName(), book.getAuthor(),book.getQty(),book.getDiscription(),book.getId());
     }
@@ -90,7 +90,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public ArrayList<Book> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from book";
 

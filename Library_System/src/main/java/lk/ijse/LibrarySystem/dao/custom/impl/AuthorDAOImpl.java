@@ -3,6 +3,7 @@ package lk.ijse.LibrarySystem.dao.custom.impl;
 import lk.ijse.LibrarySystem.dao.SQLUtil;
 import lk.ijse.LibrarySystem.dao.custom.AutorDAO;
 import lk.ijse.LibrarySystem.db.DBConnection;
+import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Author;
 
 import java.sql.Connection;
@@ -19,7 +20,7 @@ public class AuthorDAOImpl implements AutorDAO {
     }
 
     @Override
-    public boolean update(Author author) throws SQLException, ClassNotFoundException {
+    public Boolean update(Author author) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("update author set name=?,bookName=? where AuthorId=?", author.getId(),
                 author.getName(),
                 author.getBookName()
@@ -77,7 +78,7 @@ public class AuthorDAOImpl implements AutorDAO {
     }
 
     @Override
-    public ArrayList<Author> loadAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<PublisherDTO> loadAll() throws SQLException, ClassNotFoundException {
         ArrayList<Author> allItems = new ArrayList<>();
         ResultSet rst = SQLUtil.execute("SELECT * FROM Item");
         while (rst.next()) {
