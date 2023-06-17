@@ -1,11 +1,11 @@
 package lk.ijse.LibrarySystem.dao;
 
-import lk.ijse.LibrarySystem.dto.SuplierDTO;
+import lk.ijse.LibrarySystem.bo.SuperBO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CrudDAO<T> {
+public interface CrudDAO<T> extends SuperDAO {
     public boolean add(T dto) throws SQLException, ClassNotFoundException;
     public Boolean update(T dto) throws SQLException, ClassNotFoundException;
     public boolean delete(String id) throws SQLException, ClassNotFoundException;
