@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class IssueDAOImpl implements IssueDAO {
 
-    public boolean issuseFrom(IssueDTO issuse) throws SQLException, ClassNotFoundException {
+    public boolean issuseFrom(IssueDTO issuse,String qty, String bookId) throws SQLException, ClassNotFoundException {
         DBConnection.getInstance().getConnection().setAutoCommit(false);
 
         Connection con = DBConnection.getInstance().getConnection();
@@ -32,7 +32,7 @@ public class IssueDAOImpl implements IssueDAO {
         if (isUpdated) {
             String sql2 = "update book set qty=qty-? where bookId=?";
 
-            boolean isQtyUpdated = SQLUtil.execute(sql2 , qty , bookd);
+            boolean isQtyUpdated = SQLUtil.execute(sql2 , qty , bookId);
 
             if (isQtyUpdated) {
                 con.commit();
@@ -45,21 +45,6 @@ public class IssueDAOImpl implements IssueDAO {
         con.rollback();
         con.setAutoCommit(true);
 
-        return false;
-    }
-
-    @Override
-    public boolean add(Issue dto) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public Boolean update(Issue dto) throws SQLException, ClassNotFoundException {
-        return false;
-    }
-
-    @Override
-    public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -90,7 +75,19 @@ public class IssueDAOImpl implements IssueDAO {
 
     @Override
     public ArrayList<String> loadAllIds() throws SQLException {
-        return null;
+        Connection con = DBConnection.getInstance().getConnection();
+        String sql = "select iid from issuse";
+
+        PreparedStatement stm = con.prepareStatement(sql);
+
+        ResultSet result = stm.executeQuery();
+
+        ArrayList<String> issuse = new ArrayList<>();
+
+        while (result.next()) {
+            issuse.add(result.getString(1));
+        }
+        return issuse;
     }
 
     @Override
@@ -144,5 +141,20 @@ public class IssueDAOImpl implements IssueDAO {
             issuses.add(issuse1);
         }
         return issuses;
+    }
+
+    @Override
+    public boolean add(Issue dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Boolean update(Issue dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
     }
 }

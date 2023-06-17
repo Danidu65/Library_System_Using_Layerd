@@ -3,7 +3,6 @@ package lk.ijse.LibrarySystem.bo.custom;
 import lk.ijse.LibrarySystem.bo.SuperBO;
 import lk.ijse.LibrarySystem.dto.DonatesDTO;
 import lk.ijse.LibrarySystem.entity.Donates;
-import sun.print.SunPrinterJobService;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
