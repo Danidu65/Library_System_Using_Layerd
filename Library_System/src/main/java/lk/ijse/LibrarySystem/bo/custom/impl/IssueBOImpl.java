@@ -12,8 +12,9 @@ public class IssueBOImpl implements IssueBO {
     IssueDAOImpl issueDAO = new IssueDAOImpl();
     @Override
     public boolean issuseFrom(IssueDTO issuse, String qty, String Bookd) throws SQLException, ClassNotFoundException {
-        issueDAO.issuseFrom(new IssueDTO(issuse.getIssusId(),issuse.getBookId(),issuse.getIssusDate(),issuse.getMemberId(),issuse.getDueDate(),issuse.getIssuseQty()));
-        return issueDAO.issuseFrom(issuse);
+        /*issueDAO.issuseFrom(new IssueDTO(issuse.getIssusId(),issuse.getBookId(),issuse.getIssusDate(),issuse.getMemberId(),issuse.getDueDate(),issuse.getIssuseQty()));
+        return issueDAO.issuseFrom(issuse);*/
+        return false;
     }
 
     @Override

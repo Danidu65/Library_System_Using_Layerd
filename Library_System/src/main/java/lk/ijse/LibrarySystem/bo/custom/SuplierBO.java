@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 public interface SuplierBO extends SuperBO {
     public boolean supplierAdd(SuplierDTO supplier) throws SQLException, ClassNotFoundException;
-    public Supplier supplierSearchFrom(String id) throws SQLException, ClassNotFoundException;
+    public SuplierDTO supplierSearchFrom(String id) throws SQLException, ClassNotFoundException;
     public boolean supplierDelete(String id) throws SQLException, ClassNotFoundException;
     public boolean supplierUpdate(SuplierDTO supplier) throws SQLException, ClassNotFoundException;
     public String supplierGenarateTurnId() throws SQLException, ClassNotFoundException;

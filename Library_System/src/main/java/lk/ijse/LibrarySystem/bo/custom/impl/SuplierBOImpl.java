@@ -7,22 +7,19 @@ import lk.ijse.LibrarySystem.entity.Suplier;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.function.Supplier;
 
 public class SuplierBOImpl implements SuplierBO {
     SuplierDAOImpl supplierDAO = new SuplierDAOImpl();
 
     @Override
     public boolean supplierAdd(SuplierDTO supplier) throws SQLException, ClassNotFoundException {
-        supplierDAO.add(new Supplier(supplier.getId(),supplier.getName(),
-                supplier.getContact(), supplier.getAddress(),supplier.getSuplierBooks()));
-        return false;
+      return supplierDAO.add(new Suplier(supplier.getId(),supplier.getName(),supplier.getContact(),supplier.getAddress(),supplier.getSuplierBooks()));
     }
 
     @Override
-    public Supplier supplierSearchFrom(String id) throws SQLException, ClassNotFoundException {
-        return (Supplier) supplierDAO.search(id);
-
+    public SuplierDTO supplierSearchFrom(String id) throws SQLException, ClassNotFoundException {
+       Suplier suplier = supplierDAO.search(id);
+       return new SuplierDTO(suplier.getId(),suplier.getName(),suplier.getContact(),suplier.getAddress(),suplier.getSuplierBooks());
     }
 
     @Override
@@ -32,8 +29,7 @@ public class SuplierBOImpl implements SuplierBO {
 
     @Override
     public boolean supplierUpdate(SuplierDTO supplier) throws SQLException, ClassNotFoundException {
-        supplierDAO.update(new Supplier(supplier.getId(),supplier.getName(),
-                supplier.getContact(), supplier.getAddress(),supplier.getSuplierBooks()));
+        supplierDAO.update(new Suplier(supplier.getName(),supplier.getContact(),supplier.getAddress(),supplier.getSuplierBooks(),supplier.getId()));
         return false;
     }
 
@@ -50,9 +46,8 @@ public class SuplierBOImpl implements SuplierBO {
     @Override
     public ArrayList<SuplierDTO> loadAllSupplier() throws SQLException, ClassNotFoundException {
         ArrayList<SuplierDTO> allSuppliers = new ArrayList<>();
-        ArrayList<Suplier> all = new SuplierDAOImpl().loadAll();
-        for (Suplier b :  all) {
-            allSuppliers.add(new SuplierDTO());
+        for (Suplier s : supplierDAO.loadAll()) {
+            allSuppliers.add(new SuplierDTO(s.getId(),s.getName(),s.getContact(),s.getAddress(),s.getSuplierBooks()));
         }
         return allSuppliers;
     }
