@@ -7,7 +7,7 @@ public class DAOFactory {
     private DAOFactory(){
 
     }
-    private static DAOFactory getDaoFactory(){
+    public static DAOFactory getDaoFactory(){
         return(daoFactory == null ) ?daoFactory =new DAOFactory() : daoFactory;
     }
     public enum DAOTypes{
@@ -16,25 +16,25 @@ public class DAOFactory {
     public SuperDAO getDAO(DAOTypes types){
         switch (types) {
             case AUTOR:
-                return (SuperDAO) new AuthorDAOImpl();
+                return  new AuthorDAOImpl();
             case BOOK:
-                return (SuperDAO) new BookDAOImpl();
+                return  new BookDAOImpl();
             case DONETION:
-                return (SuperDAO) new DonetsDAOImpl();
+                return  new DonetsDAOImpl();
             case EXIBITION:
-                return (SuperDAO) new ExibitionDAOImpl();
+                return  new ExibitionDAOImpl();
             case ISSUSE:
-                return (SuperDAO) new IssueDAOImpl();
+                return  new IssueDAOImpl();
             case MEMBER:
-                return (SuperDAO) new MemberDAOImpl();
+                return  new MemberDAOImpl();
             case PUBLISHER:
-                return (SuperDAO) new PublisherDAOImpl();
+                return  new PublisherDAOImpl();
             case RETURN:
-                return (SuperDAO) new ReturnDAOImpl();
+                return  new ReturnDAOImpl();
             case SUPPLIER:
-                return (SuperDAO) new SuplierDAOImpl();
+                return  new SuplierDAOImpl();
             case USER:
-                return (SuperDAO) new UserDAOImpl();
+                return  new UserDAOImpl();
             default:
                 return null;
         }
