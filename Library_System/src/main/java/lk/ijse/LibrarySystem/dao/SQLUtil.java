@@ -14,7 +14,7 @@ import java.sql.SQLException;
             for (int i = 0; i < args.length; i++) {
                 pstm.setObject((i+1),args[i]);
             }
-            if (sql.startsWith("SELECT")){
+            if (sql.startsWith("SELECT") || sql.startsWith("select")){
                 return (T) pstm.executeQuery();
             }else{
                 return (T) (Boolean) (pstm.executeUpdate()>0);

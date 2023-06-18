@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Paint;
-import lk.ijse.LibrarySystem.Model.SupliersModel;
+import lk.ijse.LibrarySystem.tm.SupliersModel;
 import lk.ijse.LibrarySystem.dto.SuplierDTO;
 import lk.ijse.LibrarySystem.util.Regx.Regx;
 import lombok.SneakyThrows;
