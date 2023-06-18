@@ -1,4 +1,4 @@
-package lk.ijse.LibrarySystem.Model;
+package lk.ijse.LibrarySystem.tm;
 
 import lk.ijse.LibrarySystem.db.DBConnection;
 import lk.ijse.LibrarySystem.dto.SuplierDTO;
