@@ -13,12 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
-//import lk.ijse.LibrarySystem.Model.AuthorModel;
-import lk.ijse.LibrarySystem.Model.BookModel;
-import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
-import lk.ijse.LibrarySystem.dto.AuthorDTO;
+import lk.ijse.LibrarySystem.tm.BookModel;
 import lk.ijse.LibrarySystem.dto.BookDTO;
-import lk.ijse.LibrarySystem.entity.Author;
 import lk.ijse.LibrarySystem.util.Regx.Regx;
 import lombok.SneakyThrows;
 
@@ -82,6 +78,8 @@ public class BookFormController implements Initializable {
         String BookId = SearchBookId.getText();
         boolean delete = BookModel.Delete(BookId);
         LoadTable();
+        loadAuthorIds();
+
     }
 
     @FXML

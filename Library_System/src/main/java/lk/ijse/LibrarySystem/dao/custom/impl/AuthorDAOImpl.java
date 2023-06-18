@@ -17,7 +17,7 @@ public class AuthorDAOImpl implements AutorDAO {
 
     @Override
     public boolean add(Author author) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO Customer (AuthorId,name, bookName) VALUES (?,?,?)" , author.getId(),author.getName(),author.getBookName());
+        return SQLUtil.execute("INSERT INTO Author (AuthorId,name, bookName) VALUES (?,?,?)" , author.getId(),author.getName(),author.getBookName());
     }
 
     @Override
@@ -30,19 +30,18 @@ public class AuthorDAOImpl implements AutorDAO {
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("delete from autor where AutorId =?",id);
+        return SQLUtil.execute("delete from author where AuthorId =?",id);
     }
 
     @Override
     public Author search(String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst =  SQLUtil.execute("select * from author where authorId=?",id);
+        ResultSet rst =  SQLUtil.execute("select * from author where AuthorId=?",id);
 
         if(rst.next()){
 
             return new Author(rst.getString(1) ,
                     rst.getString(2) ,
-                    rst.getString(3) ,
-                    rst.getString(4)
+                    rst.getString(3)
             );
         }
         return null;
@@ -52,7 +51,7 @@ public class AuthorDAOImpl implements AutorDAO {
     public ArrayList<String> loadAllIds() throws SQLException {
         Connection con = DBConnection.getInstance().getConnection();
 
-        String sql = "select  AutorId from Autor";
+        String sql = "select  AuthorId from Author";
 
         PreparedStatement stm = con.prepareStatement(sql);
 
@@ -68,7 +67,7 @@ public class AuthorDAOImpl implements AutorDAO {
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-        ResultSet rst =  SQLUtil.execute("SELECT autorId FROM autor ORDER BY autorId DESC LIMIT 1");
+        ResultSet rst =  SQLUtil.execute("SELECT authorId FROM author ORDER BY authorId DESC LIMIT 1");
         if (rst.next()){
             String id = rst.getString("id");
             int newAutorId = Integer.parseInt(id.replace("A00-", "")) + 1;
@@ -81,9 +80,9 @@ public class AuthorDAOImpl implements AutorDAO {
     @Override
     public ArrayList<Author> loadAll() throws SQLException, ClassNotFoundException {
         ArrayList<Author> allItems = new ArrayList<>();
-        ResultSet rst = SQLUtil.execute("SELECT * FROM Item");
+        ResultSet rst = SQLUtil.execute("SELECT * FROM author");
         while (rst.next()) {
-            allItems.add(new Author(rst.getString("AutorID"), rst.getString("AutorName"),
+            allItems.add(new Author(rst.getString("AuthorID"), rst.getString("AuthorName"),
                     rst.getString("BookName"),rst.getString("BookID")));
         }
         return allItems;

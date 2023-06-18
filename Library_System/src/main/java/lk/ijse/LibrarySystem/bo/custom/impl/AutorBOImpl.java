@@ -1,6 +1,7 @@
 package lk.ijse.LibrarySystem.bo.custom.impl;
 
 import lk.ijse.LibrarySystem.bo.custom.AutorBO;
+import lk.ijse.LibrarySystem.dao.DAOFactory;
 import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
 import lk.ijse.LibrarySystem.dto.AuthorDTO;
 import lk.ijse.LibrarySystem.entity.Author;
@@ -10,11 +11,10 @@ import java.util.ArrayList;
 
 public class AutorBOImpl implements AutorBO {
 
-    AuthorDAOImpl autorDAO = new AuthorDAOImpl();
+    AuthorDAOImpl autorDAO = (AuthorDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.AUTOR);
 
     @Override
     public boolean autorAdd(AuthorDTO dto) throws SQLException, ClassNotFoundException {
-       // System.out.println(dto.getId());
         return autorDAO.add(new Author(dto.getId() , dto.getName() , dto.getBookName()) );
 
     }
