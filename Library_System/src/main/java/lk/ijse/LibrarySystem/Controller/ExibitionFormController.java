@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.LibrarySystem.Model.ExhibitionModel;
+import lk.ijse.LibrarySystem.tm.ExhibitionModel;
 import lk.ijse.LibrarySystem.dto.ExibitionDTO;
 
 import java.sql.SQLException;

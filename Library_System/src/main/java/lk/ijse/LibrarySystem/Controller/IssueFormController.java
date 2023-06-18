@@ -13,7 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import lk.ijse.LibrarySystem.Model.*;
+import lk.ijse.LibrarySystem.tm.*;
 import lk.ijse.LibrarySystem.dto.BookDTO;
 import lk.ijse.LibrarySystem.dto.IssueDTO;
 import lk.ijse.LibrarySystem.dto.MemberDTO;
