@@ -13,7 +13,7 @@ public class PublisherBOImpl implements PublisherBO {
     @Override
     public boolean publisherAdd(PublisherDTO publisher) throws SQLException, ClassNotFoundException {
         publisherDAO.add(new Publisher(publisher.getId(), publisher.getName(),
-                publisher.getPublishedBook(), publisher.getYear()));
+                publisher.getYear() , publisher.getPublishedBook()));
         return false;
     }
 

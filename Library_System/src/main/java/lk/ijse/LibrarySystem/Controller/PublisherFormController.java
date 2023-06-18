@@ -11,7 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.LibrarySystem.Model.*;
+import lk.ijse.LibrarySystem.tm.*;
 import lk.ijse.LibrarySystem.bo.custom.impl.PublisherBOImpl;
 import lk.ijse.LibrarySystem.dto.PublisherDTO;
 import lk.ijse.LibrarySystem.entity.Publisher;
