@@ -12,8 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.LibrarySystem.Model.DonetionModel;
-import lk.ijse.LibrarySystem.Model.ExhibitionModel;
+import lk.ijse.LibrarySystem.tm.DonetionModel;
+import lk.ijse.LibrarySystem.tm.ExhibitionModel;
 import lk.ijse.LibrarySystem.dto.DonatesDTO;
 import lk.ijse.LibrarySystem.dto.ExibitionDTO;
 

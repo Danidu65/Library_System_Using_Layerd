@@ -9,8 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
-import lk.ijse.LibrarySystem.Model.EmailModel;
-import lk.ijse.LibrarySystem.Model.MemberModel;
+import lk.ijse.LibrarySystem.tm.EmailModel;
+import lk.ijse.LibrarySystem.tm.MemberModel;
 import lk.ijse.LibrarySystem.dto.MemberDTO;
 
 import javax.mail.MessagingException;
