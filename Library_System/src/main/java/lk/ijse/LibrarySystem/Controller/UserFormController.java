@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import lk.ijse.LibrarySystem.Model.UserModel;
+import lk.ijse.LibrarySystem.tm.UserModel;
 import lk.ijse.LibrarySystem.dto.UserDTO;
 import lk.ijse.LibrarySystem.util.Regx.Regx;
 
