@@ -12,7 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.LibrarySystem.Model.UserModel;
+import lk.ijse.LibrarySystem.tm.UserModel;
 import lk.ijse.LibrarySystem.dto.UserDTO;
 
 import java.io.IOException;
