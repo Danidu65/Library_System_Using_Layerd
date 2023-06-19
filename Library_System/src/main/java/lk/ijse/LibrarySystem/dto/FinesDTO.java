@@ -11,5 +11,4 @@ import lombok.*;
 public class FinesDTO {
     private String Id;
     private String type;
-
 }

@@ -12,5 +12,4 @@ public class AuthorDTO {
     private String id;
     private String Name;
     private String BookName;
-
 }
