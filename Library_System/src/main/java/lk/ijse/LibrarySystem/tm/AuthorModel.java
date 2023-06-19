@@ -44,7 +44,6 @@ public class AuthorModel {
         }
         return null;
     }
-
     public static ArrayList<String> loadAllAuthor() throws SQLException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select  AuthorId from author";

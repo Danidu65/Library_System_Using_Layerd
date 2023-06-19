@@ -28,7 +28,6 @@ public class DonetsDAOImpl implements DonetsDAO {
     public Donates search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
-
     @Override
     public ArrayList<String> loadAllIds() throws SQLException {
         return null;
