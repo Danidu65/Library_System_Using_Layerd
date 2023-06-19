@@ -104,6 +104,7 @@ public class ReturnDAOImpl implements ReturnDAO {
 
             return issue;
         }
+
         return null;
     }
 

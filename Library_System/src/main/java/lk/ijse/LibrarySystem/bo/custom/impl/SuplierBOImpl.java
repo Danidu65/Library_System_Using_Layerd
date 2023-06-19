@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class SuplierBOImpl implements SuplierBO {
     SuplierDAOImpl supplierDAO = new SuplierDAOImpl();
-
     @Override
     public boolean supplierAdd(SuplierDTO supplier) throws SQLException, ClassNotFoundException {
       return supplierDAO.add(new Suplier(supplier.getId(),supplier.getName(),supplier.getContact(),supplier.getAddress(),supplier.getSuplierBooks()));

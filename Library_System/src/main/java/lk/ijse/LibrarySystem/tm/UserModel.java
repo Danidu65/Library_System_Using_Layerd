@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserModel {
-
     public static UserDTO SearchUser(String name) throws SQLException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "select * from user where userName = ?";

@@ -142,7 +142,6 @@ public class IssueDAOImpl implements IssueDAO {
         }
         return issuses;
     }
-
     @Override
     public boolean add(Issue dto) throws SQLException, ClassNotFoundException {
         return false;
