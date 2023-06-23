@@ -15,4 +15,7 @@ public class ReturnDTO {
     private String ReturnDate;
     private String BookId;
     private String IssuseDate;
+
+    public ReturnDTO(String returnId, String returnDate, String issuseId, String issuseDate, String bookId) {
+    }
 }
