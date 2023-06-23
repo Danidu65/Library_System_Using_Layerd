@@ -19,7 +19,8 @@ public class IssueBOImpl implements IssueBO {
 
     @Override
     public Issue searchIssuseFrom(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        Issue issuse = IssueDAO.search(id);
+        return new IssueDTO(issuse.getIssusId(),issuse.getIssusDate() , issuse.getMemberId(), issuse.getBookId() , issuse.getDueDate() , issuse.getIssuseQty() );
     }
 
     @Override
