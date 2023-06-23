@@ -16,7 +16,17 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean add(User dto) throws SQLException, ClassNotFoundException {
-        return false;
+        Connection con = DBConnection.getInstance().getConnection();
+        String sql = "INSERT INTO user(name , userName, password) VALUES(?, ?, ?)";
+
+        PreparedStatement stm = con.prepareStatement(sql);
+
+        stm.setObject(1,dto.getName());
+        stm.setObject(2,dto.getUserName());
+        stm.setObject(3,dto.getPassWord());
+
+        int result = stm.executeUpdate();
+        return result > 0;
     }
 
     @Override
@@ -31,6 +41,23 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User search(String id) throws SQLException, ClassNotFoundException {
+        Connection con = DBConnection.getInstance().getConnection();
+        String sql = "select * from user where userName = ?";
+
+        PreparedStatement stm = con.prepareStatement(sql);
+
+        stm.setObject(1, id);
+
+        ResultSet result = stm.executeQuery();
+
+        if (result.next()) {
+            User user = new User();
+            user.setName(result.getString(1));
+            user.setUserName(result.getString(2));
+            user.setPassWord(result.getString(3));
+            return user;
+        }
+
         return null;
     }
 
