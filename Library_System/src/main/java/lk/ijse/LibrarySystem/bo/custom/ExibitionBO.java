@@ -6,7 +6,6 @@ import lk.ijse.LibrarySystem.entity.Exibition;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public interface ExibitionBO extends SuperBO {
     public boolean exibitionAdd(ExibitionDTO exibition) throws SQLException, ClassNotFoundException;
     public Exibition exibitionsearchFrom(String id) throws SQLException, ClassNotFoundException;

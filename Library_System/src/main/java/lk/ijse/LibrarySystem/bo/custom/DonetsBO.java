@@ -6,7 +6,6 @@ import lk.ijse.LibrarySystem.entity.Donates;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public interface DonetsBO extends SuperBO {
     public boolean donetionAdd(DonatesDTO donetion) throws SQLException, ClassNotFoundException;
     public Donates donetionsearchFrom(String id) throws SQLException, ClassNotFoundException;
