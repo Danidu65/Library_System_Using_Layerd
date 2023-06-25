@@ -6,7 +6,6 @@ import lk.ijse.LibrarySystem.entity.Book;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public interface BookBO extends SuperBO {
     public boolean bookAdd(BookDTO book) throws SQLException, ClassNotFoundException;
     public Book booksearchFrom(String id) throws SQLException, ClassNotFoundException;

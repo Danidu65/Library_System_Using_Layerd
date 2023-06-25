@@ -16,7 +16,6 @@ public class AutorBOImpl implements AutorBO {
     @Override
     public boolean autorAdd(AuthorDTO dto) throws SQLException, ClassNotFoundException {
         return autorDAO.add(new Author(dto.getId() , dto.getName() , dto.getBookName()) );
-
     }
     @Override
     public AuthorDTO autorsearchFrom(String id) throws SQLException, ClassNotFoundException {

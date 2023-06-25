@@ -5,7 +5,6 @@ import lk.ijse.LibrarySystem.dto.AuthorDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public interface AutorBO extends SuperBO{
     public boolean autorAdd(AuthorDTO Aotor) throws SQLException, ClassNotFoundException;
     public AuthorDTO autorsearchFrom(String id) throws SQLException, ClassNotFoundException;
