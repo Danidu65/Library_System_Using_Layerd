@@ -6,7 +6,6 @@ import lk.ijse.LibrarySystem.dto.SuplierDTO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.function.Supplier;
-
 public interface SuplierBO extends SuperBO {
     public boolean supplierAdd(SuplierDTO supplier) throws SQLException, ClassNotFoundException;
     public SuplierDTO supplierSearchFrom(String id) throws SQLException, ClassNotFoundException;
