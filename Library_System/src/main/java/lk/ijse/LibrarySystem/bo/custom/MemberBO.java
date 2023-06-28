@@ -5,6 +5,7 @@ import lk.ijse.LibrarySystem.dto.MemberDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 public interface MemberBO extends SuperBO {
     public boolean memberAdd(MemberDTO member) throws SQLException, ClassNotFoundException;
     public MemberDTO membersearchFrom(String id) throws SQLException, ClassNotFoundException;
