@@ -6,6 +6,7 @@ import lk.ijse.LibrarySystem.entity.Publisher;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 public interface PublisherBO extends SuperBO {
     public boolean publisherAdd(PublisherDTO publisher)throws SQLException, ClassNotFoundException;
     public Publisher publisherSearch(String id)throws SQLException, ClassNotFoundException;
