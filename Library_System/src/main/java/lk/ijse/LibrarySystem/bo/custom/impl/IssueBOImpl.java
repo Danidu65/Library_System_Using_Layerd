@@ -25,6 +25,7 @@ public class IssueBOImpl implements IssueBO {
         Issue issuse = (Issue) CrudDAO.search(id);
         return new IssueDTO(issuse.getIssusId(),issuse.getIssusDate(),issuse.getMemberId(),issuse.getBookId(),issuse.getDueDate(),issuse.getIssuseQty());
     }
+
     @Override
     public ArrayList<IssueDTO> loadAllIssuses() throws SQLException, ClassNotFoundException {
         return null;
