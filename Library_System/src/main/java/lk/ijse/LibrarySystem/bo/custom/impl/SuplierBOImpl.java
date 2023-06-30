@@ -20,6 +20,7 @@ public class SuplierBOImpl implements SuplierBO {
        Suplier suplier = supplierDAO.search(id);
        return new SuplierDTO(suplier.getId(),suplier.getName(),suplier.getContact(),suplier.getAddress(),suplier.getSuplierBooks());
     }
+
     @Override
     public boolean supplierDelete(String id) throws SQLException, ClassNotFoundException {
         return supplierDAO.delete(id);
