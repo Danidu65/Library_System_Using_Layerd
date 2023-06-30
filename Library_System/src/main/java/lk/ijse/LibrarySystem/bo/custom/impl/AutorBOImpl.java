@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AutorBOImpl implements AutorBO {
-
     AuthorDAOImpl autorDAO = (AuthorDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.AUTOR);
 
     @Override
