@@ -20,6 +20,7 @@ public class ReturnBOImpl implements ReturnBO {
                         returns.getIssuseDate()),
                 Qty,BookId,IssuseID);
     }
+
     @Override
     public ArrayList<ReturnDTO> loadAll() throws SQLException, ClassNotFoundException {
         ArrayList<ReturnDTO> allReturns = new ArrayList<>();
