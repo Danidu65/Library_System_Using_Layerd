@@ -9,7 +9,6 @@ import lk.ijse.LibrarySystem.entity.User;
 import java.sql.SQLException;
 
 public abstract class UserBOImpl implements UserBO {
-
     UserDAOImpl userDAO = (UserDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
     @Override
     public boolean userAdd(UserDTO user) throws SQLException, ClassNotFoundException {
