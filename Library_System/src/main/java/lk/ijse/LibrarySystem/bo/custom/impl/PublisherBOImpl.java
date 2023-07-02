@@ -26,7 +26,6 @@ public class PublisherBOImpl implements PublisherBO {
     public boolean publisherDelete(String id) throws SQLException, ClassNotFoundException {
         return publisherDAO.delete(id);
     }
-
     @Override
     public boolean publisherUpdate(PublisherDTO publisher) throws SQLException, ClassNotFoundException {
         publisherDAO.update(new Publisher(publisher.getId(), publisher.getName(),
