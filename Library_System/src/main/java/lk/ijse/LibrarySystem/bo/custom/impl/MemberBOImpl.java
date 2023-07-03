@@ -48,6 +48,7 @@ public class MemberBOImpl implements MemberBO {
     public ArrayList<String> loadAllMemberIds() throws SQLException, ClassNotFoundException {
         return memberDAO.loadAllIds();
     }
+
     @Override
     public ArrayList<MemberDTO> loadAllMember() throws SQLException, ClassNotFoundException {
         ArrayList<MemberDTO> allMembers = new ArrayList<>();
