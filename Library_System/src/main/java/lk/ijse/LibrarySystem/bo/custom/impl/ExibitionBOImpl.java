@@ -12,6 +12,7 @@ public class ExibitionBOImpl implements ExibitionBO {
     public boolean exibitionAdd(ExibitionDTO exibition) throws SQLException, ClassNotFoundException {
         return false;
     }
+
     @Override
     public Exibition exibitionsearchFrom(String id) throws SQLException, ClassNotFoundException {
         return null;
