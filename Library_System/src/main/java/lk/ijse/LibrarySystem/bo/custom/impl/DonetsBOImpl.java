@@ -12,6 +12,7 @@ public class DonetsBOImpl implements DonetsBO {
     public boolean donetionAdd(DonatesDTO donetion) throws SQLException, ClassNotFoundException {
         return false;
     }
+
     @Override
     public Donates donetionsearchFrom(String id) throws SQLException, ClassNotFoundException {
         return null;
