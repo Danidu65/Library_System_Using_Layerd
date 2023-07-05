@@ -7,7 +7,6 @@ import lk.ijse.LibrarySystem.entity.Return;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public class ReturnBOImpl implements ReturnBO {
     @Override
     public boolean ReturnSet(ReturnDTO returns, String Qty, String BookId, String IssuseID) throws SQLException {
