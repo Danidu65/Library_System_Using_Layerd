@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BookBOImpl implements BookBO {
-
     BookDAOImpl bookDAO = (BookDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.BOOK);
     @Override
     public boolean bookAdd(BookDTO book) throws SQLException, ClassNotFoundException {
