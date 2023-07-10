@@ -1,5 +1,4 @@
 package lk.ijse.LibrarySystem.bo.custom.impl;
-
 import lk.ijse.LibrarySystem.bo.custom.AutorBO;
 import lk.ijse.LibrarySystem.dao.DAOFactory;
 import lk.ijse.LibrarySystem.dao.custom.impl.AuthorDAOImpl;
