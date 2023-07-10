@@ -8,7 +8,6 @@ import lk.ijse.LibrarySystem.entity.Book;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public class BookBOImpl implements BookBO {
     BookDAOImpl bookDAO = (BookDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.BOOK);
     @Override
