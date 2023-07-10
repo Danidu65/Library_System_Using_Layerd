@@ -10,7 +10,6 @@ import lk.ijse.LibrarySystem.entity.Issue;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public class IssueBOImpl implements IssueBO {
     IssueDAOImpl issuseDAO = (IssueDAOImpl) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ISSUSE);
     @Override
