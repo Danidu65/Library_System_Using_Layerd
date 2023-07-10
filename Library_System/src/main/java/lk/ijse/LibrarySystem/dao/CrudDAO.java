@@ -1,6 +1,5 @@
 package lk.ijse.LibrarySystem.dao;
 import lk.ijse.LibrarySystem.bo.SuperBO;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 
